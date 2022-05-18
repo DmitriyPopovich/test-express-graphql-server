@@ -3,6 +3,7 @@ const ApikeyService = require("../services/apikey");
 
 
 const resolver = {
+
     getAllCommits: async () => {
         return await CommitsApiService.getAllCommits()
     },
@@ -11,6 +12,13 @@ const resolver = {
     },
     getKeys: async () => {
         return await ApikeyService.getKeys()
+    },
+    createKey: async () => {
+        const apikey = Date.now()
+        return await ApikeyService.createKey(apikey)
+        // const user = _createUser(input)
+        // users.push(user)
+        // return user
     }
 }
 

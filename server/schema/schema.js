@@ -27,7 +27,9 @@ const schema = buildSchema(`
         getAllCommits: [Commit!]
         getLimitCommits(page: Int): PaginatorCommits!
         getKeys: [Key!]
-
+    }
+    type Mutation {
+        createKey: Key!
     }   
 `)
 module.exports = schema

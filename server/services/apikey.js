@@ -9,7 +9,14 @@ class ApikeyService {
         }catch (e){
             throw DbError.ConnectionError()
         }
-
+    }
+    async createKey(apikey){
+        try{
+            const data = await db.query(`INSERT INTO keys (api_key) VALUES (?)`, [apikey]);
+            return data
+        }catch (e){
+            throw DbError.ConnectionError()
+        }
     }
 }
 module.exports = new ApikeyService()
