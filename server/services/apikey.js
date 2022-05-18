@@ -1,10 +1,18 @@
-const db = require('../connectors/sqlite-connector');
+const conector_db = require('../connectors/sqlite-connector');
 const DbError = require("../exceptions/db-error");
 
 class ApikeyService {
     async getKeys(){
         try{
-            const data = await db.fetch(`SELECT * FROM keys`);
+            const data = await conector_db.fetch(`SELECT * FROM keys`);
+            return data
+        }catch (e){
+            throw DbError.ConnectionError()
+        }
+    }
+    async _getKey(apikey){
+        try{
+            const data = await conector_db.fetch(`SELECT * FROM keys WHERE api_key='${apikey}'`);
             return data
         }catch (e){
             throw DbError.ConnectionError()
@@ -12,7 +20,8 @@ class ApikeyService {
     }
     async createKey(apikey){
         try{
-            const data = await db.query(`INSERT INTO keys (api_key) VALUES (?)`, [apikey]);
+            await conector_db.run(`INSERT INTO keys (api_key) VALUES ('${apikey}')`);
+            const data = await this._getKey(apikey)
             return data
         }catch (e){
             throw DbError.ConnectionError()

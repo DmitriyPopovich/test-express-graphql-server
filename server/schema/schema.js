@@ -29,7 +29,7 @@ const schema = buildSchema(`
         getKeys: [Key!]
     }
     type Mutation {
-        createKey: Key!
+        createKey: [Key!]
     }   
 `)
 module.exports = schema

@@ -16,9 +16,6 @@ const resolver = {
     createKey: async () => {
         const apikey = Date.now()
         return await ApikeyService.createKey(apikey)
-        // const user = _createUser(input)
-        // users.push(user)
-        // return user
     }
 }
 

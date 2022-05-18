@@ -6,9 +6,10 @@
  ==> npm run dev
 
 
-Page commits:
-http://localhost:8000 ==> получение списка коммитов из репозитория facebook/react
-example graphQL:
+Page graphql:
+http://localhost:8000
+
+example graphQL requests:
 
 {
   getAllCommits {
@@ -40,6 +41,16 @@ example graphQL:
 		id, api_key, created_at
 		}
 }
+
+mutation {
+    createKey {
+		id, api_key, created_at
+		}
+}
+
+
+
+
 
 
 
