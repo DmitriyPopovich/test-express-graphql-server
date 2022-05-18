@@ -5,8 +5,8 @@ const resolver = {
     getAllCommits: async () => {
         return await CommitsApiService.getAllCommits()
     },
-    getLimitCommits: async ({limit, offset}) => {
-        return await CommitsApiService.getLimitCommits(limit, offset)
+    getLimitCommits: async ({page}) => {
+        return await CommitsApiService.getLimitCommits(page)
     }
 }
 

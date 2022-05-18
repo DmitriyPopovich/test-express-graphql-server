@@ -20,7 +20,7 @@ const schema = buildSchema(`
     }
     type Query {
         getAllCommits: [Commit!]
-        getLimitCommits(limit: Int, offset: Int): PaginatorCommits!
+        getLimitCommits(page: Int): PaginatorCommits!
 
     }   
 `)

@@ -21,7 +21,7 @@ example graphQL:
 
 
 {
-  getLimitCommits(limit:5, offset: 1) {
+  getLimitCommits(page:2) {
 		count_total, count_pages, page, data {
 		  sha
 		  date
