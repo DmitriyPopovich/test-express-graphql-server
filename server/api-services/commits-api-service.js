@@ -12,15 +12,10 @@ class CommitsApiService {
         })
         return result
     }
-
     async getLimitCommits(page){
         const commits = await this.getAllCommits()
         const limit = process.env.COUNT_ON_PAGE
         return paginator(limit, page, commits)
-
-
-
-
     }
 }
 module.exports = new CommitsApiService()

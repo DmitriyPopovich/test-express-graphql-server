@@ -18,9 +18,15 @@ const schema = buildSchema(`
         page: Int
         data: [Commit]
     }
+    type Key {
+        id: ID
+        key: String
+        created_at: String
+    }
     type Query {
         getAllCommits: [Commit!]
         getLimitCommits(page: Int): PaginatorCommits!
+        getKeys: [Key!]
 
     }   
 `)
