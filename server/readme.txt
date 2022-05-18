@@ -35,5 +35,12 @@ example graphQL:
 }
 
 
+{
+  getKeys {
+		id, api_key, created_at
+		}
+}
+
+
 
 

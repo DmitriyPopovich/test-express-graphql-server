@@ -20,7 +20,7 @@ const schema = buildSchema(`
     }
     type Key {
         id: ID
-        key: String
+        api_key: String
         created_at: String
     }
     type Query {
