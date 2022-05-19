@@ -12,7 +12,7 @@ http://localhost:8000
 example graphQL requests:
 
 {
-  getAllCommits {
+  getAllCommits(token: "qwerty")  {
     sha, html_url, date, author {
       name,
       email
@@ -20,10 +20,10 @@ example graphQL requests:
   }
 }
 
-
 {
-  getLimitCommits(page:2) {
-		count_total, count_pages, page, data {
+  getLimitCommits(page:1, token: "qwerty") {
+		count_total, count_pages, page,
+    data {
 		  sha
 		  date
       html_url
@@ -37,16 +37,26 @@ example graphQL requests:
 
 
 {
-  getKeys {
-		id, api_key, created_at
+  getKeys(token: "qwerty") {
+		id, api_key
+		}
+}
+
+{
+    helloWorld {
+		message
 		}
 }
 
 mutation {
-    createKey {
+    createKey(token: "qwerty") {
 		id, api_key, created_at
 		}
 }
+
+
+
+
 
 
 

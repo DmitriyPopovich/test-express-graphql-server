@@ -2,9 +2,10 @@ const {graphqlHTTP} = require("express-graphql");
 const schema = require('../schema/schema')
 const resolver = require('../resolver/resolver')
 
-const commitsRouter = graphqlHTTP({
+const router = graphqlHTTP({
     graphiql: true,
     schema: schema,
     rootValue: resolver
 })
-module.exports = commitsRouter
+
+module.exports = router

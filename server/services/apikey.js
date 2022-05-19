@@ -10,7 +10,7 @@ class ApikeyService {
             throw DbError.ConnectionError()
         }
     }
-    async _getKey(apikey){
+    async getKey(apikey){
         try{
             const data = await conector_db.fetch(`SELECT * FROM keys WHERE api_key='${apikey}'`);
             return data
@@ -21,7 +21,7 @@ class ApikeyService {
     async createKey(apikey){
         try{
             await conector_db.run(`INSERT INTO keys (api_key) VALUES ('${apikey}')`);
-            const data = await this._getKey(apikey)
+            const data = await this.getKey(apikey)
             return data
         }catch (e){
             throw DbError.ConnectionError()
