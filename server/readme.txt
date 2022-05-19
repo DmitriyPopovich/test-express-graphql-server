@@ -9,6 +9,8 @@
 Page graphql:
 http://localhost:8000
 
+В базе существует дефолтный токен "qwerty"
+все примеры запросов указаны с этим токеном
 example graphQL requests:
 
 {
