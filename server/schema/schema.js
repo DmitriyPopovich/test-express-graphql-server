@@ -30,21 +30,12 @@ const keyType = new graphql.GraphQLObjectType({
     fields: {
         id: { type: graphql.GraphQLString },
         api_key: { type: graphql.GraphQLString },
-        created_at: { type: graphql.GraphQLString },
     }
 });
 const helloWorldType = new graphql.GraphQLObjectType({
     name: 'HelloWorld',
-
     fields: {
         message: { type: graphql.GraphQLString },
-        // resolve: (post, args, context, { rootValue }) => {
-        //     // return the post body only if the user is the post's author
-        //     // if (context.user && (context.user.id === post.authorId)) {
-        //     //     return post.body;
-        //     // }
-        //     console.log(post, args, context)
-        // },
     }
 });
 const queryType = new graphql.GraphQLObjectType({

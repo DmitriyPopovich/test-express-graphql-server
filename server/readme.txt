@@ -50,7 +50,7 @@ example graphQL requests:
 
 mutation {
     createKey(token: "qwerty") {
-		id, api_key, created_at
+		id, api_key
 		}
 }
 

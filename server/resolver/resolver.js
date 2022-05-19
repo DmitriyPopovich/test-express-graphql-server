@@ -1,6 +1,5 @@
 const CommitsApiService = require("../api-services/commits-api-service");
-const ApikeyService = require("../services/apikey");
-const DbError = require("../exceptions/db-error");
+const ApikeyService = require("../services/apikey-service");
 const AuthError = require("../exceptions/auth-error");
 
 const checkAuth = async (token) => {
@@ -10,8 +9,6 @@ const checkAuth = async (token) => {
 }
 
 const resolver = {
-
-
     getAllCommits: async ({token}) => {
         await checkAuth(token)
         return await CommitsApiService.getAllCommits()
